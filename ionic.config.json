@@ -1,0 +1,7 @@
+{
+  "name": "lockout-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
