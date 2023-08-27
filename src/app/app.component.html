@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Lock Screen
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="lockScreen()">Lock Screen</ion-button>
+  <ion-button [ngClass]="isDeviceLocked ? 'locked-button' : 'unlocked-button'" (click)="isLocked()">
+  {{ isDeviceLocked ? 'Locked' : 'Unlocked' }}
+</ion-button>
+<ion-list>
+  <ion-row>
+    <ion-button class="number-button" (click)="addNumber(1)">1</ion-button>
+    <ion-button class="number-button" (click)="addNumber(2)">2</ion-button>
+    <ion-button class="number-button" (click)="addNumber(3)">3</ion-button>
+  </ion-row>
+  <ion-row>
+    <ion-button class="number-button" (click)="addNumber(4)">4</ion-button>
+    <ion-button class="number-button" (click)="addNumber(5)">5</ion-button>
+    <ion-button class="number-button" (click)="addNumber(6)">6</ion-button>
+  </ion-row>
+  <ion-row>
+    <ion-button class="number-button" (click)="addNumber(7)">7</ion-button>
+    <ion-button class="number-button" (click)="addNumber(8)">8</ion-button>
+    <ion-button class="number-button" (click)="addNumber(9)">9</ion-button>
+  </ion-row>
+  <ion-row>
+    <ion-button class="number-button" (click)="clearNumber()">C</ion-button>
+    <ion-button class="number-button" (click)="addNumber(0)">0</ion-button>
+    <ion-button class="number-button" (click)="removeNumber()"><ion-icon name="backspace-outline"></ion-icon></ion-button>
+  </ion-row>
+  <ion-button (click)="unlock()">Enter</ion-button>
+</ion-list>
+<ion-item>
+  <ion-label>
+    <small>Entered PIN:</small>
+  </ion-label>
+  <input type="text" style="width: 150px;" [(ngModel)]="pin" (input)="onPinInput($event)">
+</ion-item>
+
+</ion-content>
